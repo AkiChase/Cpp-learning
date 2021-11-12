@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void func_01() 
+void func_16()
 {
-	cout << "Êä³öÄÚÈÝ" << endl;
+
 }
