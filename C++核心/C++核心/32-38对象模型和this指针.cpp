@@ -5,6 +5,12 @@ using namespace std;
 // 只有非静态成员 变量  才属于类特定的一个对象，可以用sizeof获取大小，空对象sizeof为1，只有一个int的为4
 // 函数和静态变量都是共享的
 
+class Test2;
+class Temp
+{
+public:
+	void visit(Test2& t2);
+};
 
 class Test2
 {
@@ -53,8 +59,28 @@ public:
 	int n;
 	mutable int m;
 	static int s;
+
+private:
+	int pv = 123;
+	// 声明友元，该全局函数可以访问本类内的私有成员
+	friend void friendGet(Test2& t);
+	// 友元类的所有成员函数也能访问本类的私有成员
+	friend class Test;
+	// 成员函数做友元：让另一个类中的某一个成员函数能访问本类的私有成员
+	friend void Temp::visit(Test2& t2);
 };
 int Test2::s = 123;
+
+
+void Temp::visit(Test2& t2) {
+	cout << "友元访问私有属性：" << t2.pv << endl;
+}
+
+
+
+void friendGet(Test2& t) {
+	cout << "友元访问私有属性：" << t.pv << endl;
+}
 
 
 void func_32() {
@@ -71,4 +97,9 @@ void func_32() {
 	const Test2 tt(123);
 	tt.s = 666;
 	tt.showConst(); //仅能调用常函数
+
+	friendGet(t);
+
+	Temp tmp;
+	tmp.visit(t);
 }
