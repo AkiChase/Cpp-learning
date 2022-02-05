@@ -20,10 +20,13 @@ int main() {
 			wm.exitSystem();
 			break;
 		case 1:
+			wm.addEmp();
 			break;
 		case 2:
+			wm.showEmp();
 			break;
 		case 3:
+			wm.delEmp();
 			break;
 		case 4:
 			break;
