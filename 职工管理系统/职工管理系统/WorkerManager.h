@@ -19,9 +19,16 @@ public:
 	void showEmp();
 	int getEmpIndex(int id);
 	void delEmp();
+	void modifyEmp();
+	void findEmp();
+	void sortEmp();
+	void clearFile();
+
 
 	int m_empNum;
 	Worker** m_empArr;
 	bool m_FileIsEmpty;
+private:
+	Worker* createNewWorker();
 };
 

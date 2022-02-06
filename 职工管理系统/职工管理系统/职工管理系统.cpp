@@ -29,12 +29,16 @@ int main() {
 			wm.delEmp();
 			break;
 		case 4:
+			wm.modifyEmp();
 			break;
 		case 5:
+			wm.findEmp();
 			break;
 		case 6:
+			wm.sortEmp();
 			break;
 		case 7:
+			wm.clearFile();
 			break;
 		default:
 			cout << "ÇëÊäÈë0-7µÄÐòºÅ£¡" << endl;
