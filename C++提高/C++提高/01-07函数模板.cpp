@@ -40,6 +40,13 @@ void myPrint(T arr[], int len) {
 	cout << endl;
 }
 
+
+template<typename numType, typename strType>
+void myPrint2(numType num, strType str) {
+	cout << "数字:" << num << endl;
+	cout << "文本:" << str << endl;
+}
+
 class MyData
 {
 public:
@@ -107,4 +114,9 @@ void func_01() {
 	MyData d1(1);
 	MyData d2(1);
 	myCompare(d1, d2);
+
+
+	double num1 = 3.1415926;
+	char str1[] = "这是文本";
+	myPrint2(num1, str1);
 }
