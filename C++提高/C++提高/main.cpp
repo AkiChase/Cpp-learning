@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-void func_49();
+void func_65();
 
 int main() {
 
-	func_49();
+	func_65();
 	system("pause");
 	return 0;
 }
