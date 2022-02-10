@@ -1,0 +1,22 @@
+#pragma once
+#include "Identity.h"
+class Teacher :
+	public Identity
+{
+public:
+	Teacher();
+	Teacher(int empId, string name, string pwd);
+
+	//菜单界面
+	void openMenu();
+
+	//查看所有预约
+	void showAllOrder();
+
+	//审核预约
+	void validOrder();
+
+	//职工号
+	int m_EmpId;
+};
+
